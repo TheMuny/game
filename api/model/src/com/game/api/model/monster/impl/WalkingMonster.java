@@ -13,16 +13,22 @@ import com.game.api.model.monster.Movable;
 public class WalkingMonster extends com.game.api.model.monster.impl.Character implements Monster,Movable,Npc{
 
 
-	
+	public WalkingMonster() {
+		
+		health = 100;
+		Type = AttackType.MELEE;
+		location.setLocation((int)(Math.random()*10),(int)(Math.random()*5));
+	}
 	public WalkingMonster(int health, 
 			Point location) {
 		
 		this.health = health;
 		Type = AttackType.MELEE;
-	//	this.check = check;
 		this.location = location;
 	}
 
+	
+	
 	@Override
 	public boolean canDoAction(CharacterAction action) {
 		if(action.getActionTarget()!=null){
@@ -50,21 +56,23 @@ public class WalkingMonster extends com.game.api.model.monster.impl.Character im
 	
 	@Override
 	public boolean isNpc() {
-		//*********************************
-		//*********************************
-		return false;
-	}
-
-	@Override
-	public boolean canMove() {
-		//*********************************
-		//*********************************
+		
 		return true;
 	}
 
 	@Override
+	public boolean canMove() {
+		if(health!=0){
+		return true;
+		}else{
+			return false;
+		}
+	}
+
+	@Override
 	public void attack(Character character) {
-		character.modifyHealth(health-Type.getDamage());
+		character.modifyHealth(character.getHealth()-Type.getDamage());
+		
 	}
 
 	@Override
