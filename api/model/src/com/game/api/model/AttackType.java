@@ -4,7 +4,7 @@ package com.game.api.model;
  * Created by Denis on 5/27/2015.
  */
 public enum AttackType {
-    RANGE(7, 5), MAGIC(5,7), MELEE(2,8);
+    RANGE(6, 3), MAGIC(5,7), MELEE(2,4);
     
     
     private final int distance;
