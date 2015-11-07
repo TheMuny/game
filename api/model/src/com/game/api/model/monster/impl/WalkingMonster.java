@@ -55,8 +55,7 @@ public class WalkingMonster extends com.game.api.model.monster.impl.Character im
 
 	
 	@Override
-	public boolean isNpc() {
-		
+	public boolean isNpc() {		
 		return true;
 	}
 
