@@ -6,18 +6,19 @@ import com.game.api.model.AttackType;
 import com.game.api.model.Character;
 import com.game.api.model.CharacterAction;
 import com.game.api.model.Npc;
+import com.game.api.model.monster.Flying;
 import com.game.api.model.monster.Monster;
 import com.game.api.model.monster.Movable;
 
 
-public class WalkingMonster extends com.game.api.model.monster.impl.Character implements Monster,Movable,Npc{
+public class WalkingMonster extends  com.game.api.model.monster.impl.Monster implements Monster,Npc{
 
 
 	public WalkingMonster() {
 		
 		health = 100;
 		Type = AttackType.MELEE;
-		location.setLocation((int)(Math.random()*10),(int)(Math.random()*5));
+		location.setLocation(12, 6);
 	}
 	public WalkingMonster(int health, 
 			Point location) {
@@ -79,23 +80,5 @@ public class WalkingMonster extends com.game.api.model.monster.impl.Character im
 		return Type.getDistance();
 	}
 
-	@Override
-	public void moveTo(Point point) {
-		location.setLocation(point);		
-	}
-
-	@Override
-	public boolean canMoveTo(Point point) {
-		//*********************************
-		//*********************************
-		return true;
-		}
-	
-
-	
-	@Override
-	public Point getPosition() {		
-		return location;
-	}
 
 }

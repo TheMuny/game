@@ -5,58 +5,63 @@ import java.awt.Point;
 import com.game.api.model.AttackType;
 import com.game.api.model.CharacterAction;
 
-public class HeroPlayer extends com.game.api.model.monster.impl.Character{
+public class HeroPlayer extends com.game.api.model.monster.impl.Character {
 
+
+	private AttackType Type2;
+	private AttackType Type3;
 	
     public HeroPlayer() {
-		
-		health = 500;
-		Type = AttackType.MAGIC;
-		location.setLocation((int)(Math.random()*10),(int)(Math.random()*5));
+    	
+    	health=500;
+		Type = AttackType.MELEE;
+		Type2 =AttackType.RANGE;
+		Type3 =AttackType.MAGIC;
+		location.setLocation(0, 4);
 	}
 	
 	public HeroPlayer(int health, 
 			Point location) {
 		
 		this.health = health;
-		Type = AttackType.RANGE;
+		Type = AttackType.MELEE;
+		Type2 =AttackType.RANGE;
+		Type3 =AttackType.MAGIC;
 		this.location = location;
 	}
 
 	@Override
 	public boolean canDoAction(CharacterAction action) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
+	
 	@Override
 	public void doAction(CharacterAction action) {
-		// TODO Auto-generated method stub
 		
 	}
 
+	
 	@Override
 	public int getHealth() {
-		// TODO Auto-generated method stub
-		return 0;
+		return health;
 	}
 
 	@Override
 	public void modifyHealth(int val) {
-		// TODO Auto-generated method stub
+		health=val;
 		
 	}
 
 	@Override
 	public boolean isNpc() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean canMove() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean canMove() {	
+		return true;
 	}
+
 
 }

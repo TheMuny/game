@@ -11,14 +11,14 @@ import com.game.api.model.monster.Monster;
 import com.game.api.model.monster.Movable;
 
 
-public class FlyingMonster extends com.game.api.model.monster.impl.Character implements Monster,Movable,Npc,Flying{
+public class FlyingMonster extends com.game.api.model.monster.impl.Monster implements Monster,Movable,Npc,Flying{
 
 
     public FlyingMonster() {
 		
 		health = 60;
 		Type = AttackType.RANGE;
-		location.setLocation((int)(Math.random()*-10),(int)(Math.random()*5));
+		location.setLocation(12, 1);
 	}
 	
 	public FlyingMonster(int health, 
@@ -81,23 +81,6 @@ public class FlyingMonster extends com.game.api.model.monster.impl.Character imp
 		return Type.getDistance();
 	}
 
-	@Override
-	public void moveTo(Point point) {
-		location.setLocation(point);		
-	}
-
-	@Override
-	public boolean canMoveTo(Point point) {
-		//*********************************
-		//*********************************
-		return true;
-		}
 	
-
 	
-	@Override
-	public Point getPosition() {		
-		return location;
-	}
-
 }
