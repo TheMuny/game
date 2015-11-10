@@ -16,7 +16,7 @@ public class GameService implements com.game.api.service.GameService{
 	private Character [][]map= new Character[25][25];
 	private Monster[]monsters = new Monster[10];
 	private HeroPlayer hero = new HeroPlayer();
-	private Point p;
+//	private Point p;
 	
 	
 	public void setLocationCell(){		
@@ -73,10 +73,10 @@ public class GameService implements com.game.api.service.GameService{
 
 
 	public static void main(String[] args){
-
-
 		
 		GameService G = new GameService();
+		
+		
 		G.setLocationCell();//test
 //		for (int i=0;i<G.monsters.length;i++){
 //			if(G.monsters[i]!=null){
@@ -88,22 +88,28 @@ public class GameService implements com.game.api.service.GameService{
 //				System.out.println(i+" ");
 //			}
 //		}
-//		G.calculateNextStep();
-		
+			
+		G.showOnMap();//test
+		for (int i=0;i<G.map.length;i++){
+			for (int j=0;j<G.map[i].length;j++){
+				if(G.map[i][j]!=null){
+					System.out.print(i+" "+j+" "+" - Monster"+"\r\n");
+				
+		    	}
+			}
+		}
+		System.out.println("________________________________________");
+		G.calculateNextStep();
 		
 		G.showOnMap();//test
 		for (int i=0;i<G.map.length;i++){
 			for (int j=0;j<G.map[i].length;j++){
-				if(G.map[i][j]==null){
-					
-					System.out.println(i+" "+j+" ");
-				}else{
-					System.out.println(i+" "+j+" "+" - Monster");
-				}
+				if(G.map[i][j]!=null){
+					System.out.print(i+" "+j+" "+" - Monster"+"\r\n");
+				
+		    	}
 			}
 		}
-		
-		
 		
 //		Point p   = new Point();
 //		Character [][] map = new Character[7][13];
