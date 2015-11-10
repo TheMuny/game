@@ -2,7 +2,7 @@ package com.game.api.model.monster.impl;
 
 import java.awt.Point;
 
-import com.game.api.model.CharacterAction;
+
 import com.game.api.model.monster.Movable;
 
 public abstract  class Monster extends Character implements Movable{
@@ -26,7 +26,10 @@ public abstract  class Monster extends Character implements Movable{
 		return location;
 	}
 
-	
+	public Point getLocation(){
+		return location.getLocation();
+		
+	}
 	
 }
 

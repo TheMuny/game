@@ -17,7 +17,7 @@ public class HeroPlayer extends com.game.api.model.monster.impl.Character {
 		Type = AttackType.MELEE;
 		Type2 =AttackType.RANGE;
 		Type3 =AttackType.MAGIC;
-		location.setLocation(0, 4);
+	
 	}
 	
 	public HeroPlayer(int health, 

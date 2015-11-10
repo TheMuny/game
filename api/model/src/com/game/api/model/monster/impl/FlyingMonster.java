@@ -18,7 +18,7 @@ public class FlyingMonster extends com.game.api.model.monster.impl.Monster imple
 		
 		health = 60;
 		Type = AttackType.RANGE;
-		location.setLocation(12, 1);
+		
 	}
 	
 	public FlyingMonster(int health, 
@@ -29,6 +29,11 @@ public class FlyingMonster extends com.game.api.model.monster.impl.Monster imple
 		this.location = location;
 	}
 
+	public Point getLocation(){
+		return location.getLocation();
+		
+	}
+	
 	@Override
 	public boolean canDoAction(CharacterAction action) {
 		if(action.getActionTarget()!=null){
@@ -63,11 +68,12 @@ public class FlyingMonster extends com.game.api.model.monster.impl.Monster imple
 
 	@Override
 	public boolean canMove() {
-		if(health!=0){
-			return true;
-			}else{
-				return false;
-			}
+//		if(health!=0){
+//			return true;
+//			}else{
+//				return false;
+//			}
+		return true;
 	}
 
 	@Override

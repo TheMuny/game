@@ -18,7 +18,7 @@ public class WalkingMonster extends  com.game.api.model.monster.impl.Monster imp
 		
 		health = 100;
 		Type = AttackType.MELEE;
-		location.setLocation(12, 6);
+		
 	}
 	public WalkingMonster(int health, 
 			Point location) {
@@ -27,7 +27,11 @@ public class WalkingMonster extends  com.game.api.model.monster.impl.Monster imp
 		Type = AttackType.MELEE;
 		this.location = location;
 	}
-
+	public Point getLocation(){
+		return location.getLocation();
+		
+	}
+	
 	
 	
 	@Override
@@ -62,11 +66,12 @@ public class WalkingMonster extends  com.game.api.model.monster.impl.Monster imp
 
 	@Override
 	public boolean canMove() {
-		if(health!=0){
+//		if(health!=0){
+//		return true;
+//		}else{
+//			return false;
+//		}
 		return true;
-		}else{
-			return false;
-		}
 	}
 
 	@Override
