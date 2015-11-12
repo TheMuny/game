@@ -16,7 +16,7 @@ public class GameService implements com.game.api.service.GameService{
 	private Character [][]map= new Character[25][25];
 	private Monster[]monsters = new Monster[10];
 	private HeroPlayer hero = new HeroPlayer();
-//	private Point p;
+
 	
 	
 	public void setLocationCell(){		
@@ -34,6 +34,23 @@ public class GameService implements com.game.api.service.GameService{
 			}
 		}		
 	}
+	
+	
+	public void fight(){
+	    
+		for (int i=0;i<monsters.length;i++){
+			Movable m = (Movable) monsters[i];
+			for(int j=0;j<monsters.length;j++){
+				if(i!=j){
+			Movable s = (Movable) monsters[j];
+			if((int)(m.getPosition().distance(s.getPosition()))<=monsters[i].getAttackDistance()){
+				monsters[i].attack(monsters[j]);
+				  }
+			   }
+			}
+		}
+	}
+	
 	
 	
 	public void showOnMap(){
@@ -89,27 +106,46 @@ public class GameService implements com.game.api.service.GameService{
 //			}
 //		}
 			
-		G.showOnMap();//test
-		for (int i=0;i<G.map.length;i++){
-			for (int j=0;j<G.map[i].length;j++){
-				if(G.map[i][j]!=null){
-					System.out.print(i+" "+j+" "+" - Monster"+"\r\n");
-				
-		    	}
-			}
+//		G.showOnMap();//test
+//		for (int i=0;i<G.map.length;i++){
+//			for (int j=0;j<G.map[i].length;j++){
+//				if(G.map[i][j]!=null){
+//					System.out.print(i+" "+j+" "+" - Monster"+"\r\n");
+//				
+//		    	}
+//			}
+//		}
+//		System.out.println("________________________________________");
+//		G.calculateNextStep();
+//		
+//		G.showOnMap();//test
+//		for (int i=0;i<G.map.length;i++){
+//			for (int j=0;j<G.map[i].length;j++){
+//				if(G.map[i][j]!=null){
+//					System.out.print(i+" "+j+" "+" - Monster"+"\r\n");
+//				
+//		    	}
+//			}
+//		}
+		
+		
+		for(int i=0;i<G.monsters.length;i++){
+			System.out.println(G.monsters[i].getHealth());	
 		}
 		System.out.println("________________________________________");
-		G.calculateNextStep();
-		
-		G.showOnMap();//test
-		for (int i=0;i<G.map.length;i++){
-			for (int j=0;j<G.map[i].length;j++){
-				if(G.map[i][j]!=null){
-					System.out.print(i+" "+j+" "+" - Monster"+"\r\n");
-				
-		    	}
-			}
+		G.fight();
+		for(int i=0;i<G.monsters.length;i++){
+			System.out.println(G.monsters[i].getHealth());
 		}
+		
+//		Movable m = (Movable) G.monsters[0];
+//		Movable s = (Movable) G.monsters[1];
+//		System.out.println(m.getPosition().distance(s.getPosition()));
+//		
+//		Point p = new Point(5,6);
+//		Point t = new Point(5,10);
+//		System.out.println(p.distance(t));
+		
 		
 //		Point p   = new Point();
 //		Character [][] map = new Character[7][13];
