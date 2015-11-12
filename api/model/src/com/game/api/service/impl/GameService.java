@@ -93,8 +93,8 @@ public class GameService implements com.game.api.service.GameService{
 		
 		GameService G = new GameService();
 		
-		
-		G.setLocationCell();//test
+		                        /** test locationCell*/
+		G.setLocationCell();
 //		for (int i=0;i<G.monsters.length;i++){
 //			if(G.monsters[i]!=null){
 //				Movable m = (Movable) monsters[i];
@@ -105,8 +105,8 @@ public class GameService implements com.game.api.service.GameService{
 //				System.out.println(i+" ");
 //			}
 //		}
-			
-//		G.showOnMap();//test
+		                      /** test showOnMap*/
+//		G.showOnMap();
 //		for (int i=0;i<G.map.length;i++){
 //			for (int j=0;j<G.map[i].length;j++){
 //				if(G.map[i][j]!=null){
@@ -116,9 +116,20 @@ public class GameService implements com.game.api.service.GameService{
 //			}
 //		}
 //		System.out.println("________________________________________");
+		
+		                    /** test calculateNextStep*/
+//		G.showOnMap();
+//		for (int i=0;i<G.map.length;i++){
+//			for (int j=0;j<G.map[i].length;j++){
+//				if(G.map[i][j]!=null){
+//					System.out.print(i+" "+j+" "+" - Monster"+"\r\n");
+//				
+//		    	}
+//			}
+//		}
 //		G.calculateNextStep();
 //		
-//		G.showOnMap();//test
+//		G.showOnMap();
 //		for (int i=0;i<G.map.length;i++){
 //			for (int j=0;j<G.map[i].length;j++){
 //				if(G.map[i][j]!=null){
@@ -128,7 +139,7 @@ public class GameService implements com.game.api.service.GameService{
 //			}
 //		}
 		
-		
+		                         /** test fight*/
 		for(int i=0;i<G.monsters.length;i++){
 			System.out.println(G.monsters[i].getHealth());	
 		}
@@ -138,37 +149,7 @@ public class GameService implements com.game.api.service.GameService{
 			System.out.println(G.monsters[i].getHealth());
 		}
 		
-//		Movable m = (Movable) G.monsters[0];
-//		Movable s = (Movable) G.monsters[1];
-//		System.out.println(m.getPosition().distance(s.getPosition()));
-//		
-//		Point p = new Point(5,6);
-//		Point t = new Point(5,10);
-//		System.out.println(p.distance(t));
-		
-		
-//		Point p   = new Point();
-//		Character [][] map = new Character[7][13];
-//	
-//	    map [0][3] = new HeroPlayer();
-//	    map [1][12]= new WalkingMonster();
-//	    map [6][12]= new FlyingMonster();
-//		
-//	    
-//	    //moveMonsters
-//	    for(int i=0;i<map.length;i++){
-//	    	for(int j=0;j<map[i].length;j++){
-//	    		if(map[i][j] instanceof WalkingMonster){
-//	    			map[1][11] = map[i][j];
-//	    			map[i][j]=null;		
-//	    		}else if(map[i][j]instanceof FlyingMonster){
-//	    			map[6][11]=map[i][j];
-//	    			map[i][j]=null;
-//	    		}
-//	    	}
-//	    }
-	    
-	    
+
 	    
 	}
     
